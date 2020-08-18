@@ -3,7 +3,7 @@ About mpc
 
 Home: http://www.multiprecision.org/
 
-Package license: LGPL-3-or-later
+Package license: LGPL-3.0-or-later
 
 Feedstock license: BSD-3-Clause
 
