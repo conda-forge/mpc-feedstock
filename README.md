@@ -5,11 +5,9 @@ Home: http://www.multiprecision.org/
 
 Package license: LGPL-3.0-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mpc-feedstock/blob/master/LICENSE.txt)
 
 Summary: A C library for the arithmetic of complex numbers with arbitrarily high precision.
-
-
 
 Current build status
 ====================
