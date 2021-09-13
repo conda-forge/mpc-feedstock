@@ -5,11 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  fn: mpc-{{ version }}.tar.gz
   url: https://ftp.gnu.org/gnu/mpc/mpc-{{ version }}.tar.gz
   sha256: 17503d2c395dfcf106b622dc142683c1199431d095367c6aacba6eec30340459
-  patches:
-    - patches/build-vc14.patch
 
 build:
   skip: true  # [win and vc<14]
@@ -19,8 +16,9 @@ build:
 
 requirements:
   build:
-    - libtool         # [unix]
-    - m4              # [unix]
+    - gnuconfig              # [unix]
+    - {{ compiler('c') }}
+    - autotools_clang_conda  # [win]
     - make            # [unix]
     - {{ compiler('c') }}
   host:
@@ -37,7 +35,6 @@ test:
     - if not exist %LIBRARY_INC%\\mpc.h exit 1                  # [win]
     - if not exist %LIBRARY_LIB%\\mpc.lib exit 1                # [win]
     - if not exist %LIBRARY_BIN%\\mpc.dll exit 1                # [win]
-    - if not exist %LIBRARY_LIB%\\mpc_static.lib exit 1         # [win]
     - test -f ${PREFIX}/include/mpc.h                           # [unix]
     - test -f ${PREFIX}/lib/libmpc.dylib                        # [osx]
     - test -f ${PREFIX}/lib/libmpc.so                           # [linux]
