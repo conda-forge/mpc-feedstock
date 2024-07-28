@@ -10,7 +10,7 @@ source:
 
 build:
   skip: true  # [win and vc<14]
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("mpc") }}
 
@@ -23,11 +23,11 @@ requirements:
     - {{ compiler('c') }}
   host:
     - gmp             # [unix]
-    - mpir            # [win]
+    - gmp            # [win]
     - mpfr
   run:
     - gmp             # [unix]
-    - mpir            # [win]
+    - gmp            # [win]
     - mpfr
 
 test:
