@@ -18,16 +18,11 @@ requirements:
   build:
     - gnuconfig              # [unix]
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - autotools_clang_conda  # [win]
-    - make            # [unix]
-    - {{ compiler('c') }}
+    - make                   # [unix]
   host:
-    - gmp             # [unix]
-    - gmp            # [win]
-    - mpfr
-  run:
-    - gmp             # [unix]
-    - gmp            # [win]
+    - gmp
     - mpfr
 
 test:
