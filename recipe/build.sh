@@ -19,5 +19,5 @@ fi
 make install
 
 if [[ "$target_platform" == "win-64" ]]; then
-  cp ${PREFIX}/lib/libmpfr.dll.a ${PREFIX}/lib/mpfr.lib
+  cp ${PREFIX}/lib/libmpc.dll.a ${PREFIX}/lib/mpc.lib
 fi
